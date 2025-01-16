@@ -53,29 +53,37 @@ read -rd '' config <<'EOF'
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
-    info title
+    # Domain
+    prin "$(color 1)domain.kku.ac.kr"
     info underline
 
     info "OS" distro
-    info "Host" model
     info "Kernel" kernel
-    info "Uptime" uptime
-    info "Packages" packages
     info "Shell" shell
-    info "Resolution" resolution
-    info "DE" de
-    info "WM" wm
-    info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
-    info "Terminal" term
-    info "Terminal Font" term_font
     info "CPU" cpu
     info "GPU" gpu
-    info "Memory" memory
+    
 
-    # info "GPU Driver" gpu_driver  # Linux/macOS only
-    # info "Disk" disk
+    prin ""
+    info "Uptime" uptime
+    info "Memory" memory
+    info "Disk" disk
+
+    prin ""
+    # Email
+    prin "Contact: email@kku.ac.kr"
+
+    # info title
+    # info "Host" model
+    # info "Packages" packages
+    # info "Resolution" resolution
+    # info "DE" de
+    # info "WM" wm
+    # info "WM Theme" wm_theme
+    # info "Theme" theme
+    # info "Icons" icons
+    # info "Terminal" term
+    # info "Terminal Font" term_font
     # info "Battery" battery
     # info "Font" font
     # info "Song" song
@@ -84,8 +92,8 @@ print_info() {
     # info "Public IP" public_ip
     # info "Users" users
     # info "Locale" locale  # This only works on glibc systems.
-
-    info cols
+    # info "GPU Driver" gpu_driver  # Linux/macOS only
+    # info cols
 }
 
 # Title
@@ -136,7 +144,7 @@ distro_shorthand="off"
 # Example:
 # on:  'Arch Linux x86_64'
 # off: 'Arch Linux'
-os_arch="on"
+os_arch="off"
 
 
 # Uptime
@@ -152,7 +160,7 @@ os_arch="on"
 # on:   '2 days, 10 hours, 3 mins'
 # tiny: '2d 10h 3m'
 # off:  '2 days, 10 hours, 3 minutes'
-uptime_shorthand="on"
+uptime_shorthand="tiny"
 
 
 # Memory
@@ -167,7 +175,7 @@ uptime_shorthand="on"
 # Example:
 # on:   '1801MiB / 7881MiB (22%)'
 # off:  '1801MiB / 7881MiB'
-memory_percent="off"
+memory_percent="on"
 
 # Change memory output unit.
 #
@@ -269,7 +277,7 @@ cpu_brand="on"
 # Example:
 # on:  'Intel i7-6500U (4) @ 3.1GHz'
 # off: 'Intel i7-6500U (4)'
-cpu_speed="on"
+cpu_speed="off"
 
 # CPU Cores
 # Display CPU cores in output
@@ -283,7 +291,7 @@ cpu_speed="on"
 # logical:  'Intel i7-6500U (4) @ 3.1GHz' (All virtual cores)
 # physical: 'Intel i7-6500U (2) @ 3.1GHz' (All physical cores)
 # off:      'Intel i7-6500U @ 3.1GHz'
-cpu_cores="logical"
+cpu_cores="off"
 
 # CPU Temperature
 # Hide/Show CPU temperature.
@@ -300,7 +308,7 @@ cpu_cores="logical"
 # C:   'Intel i7-6500U (4) @ 3.1GHz [27.2°C]'
 # F:   'Intel i7-6500U (4) @ 3.1GHz [82.0°F]'
 # off: 'Intel i7-6500U (4) @ 3.1GHz'
-cpu_temp="off"
+cpu_temp="C"
 
 
 # GPU
@@ -692,15 +700,15 @@ col_offset="auto"
 # Example:
 # neofetch --bar_char 'elapsed' 'total'
 # neofetch --bar_char '-' '='
-bar_char_elapsed="-"
-bar_char_total="="
+bar_char_elapsed="■"
+bar_char_total="■"
 
 # Toggle Bar border
 #
 # Default:  'on'
 # Values:   'on', 'off'
 # Flag:     --bar_border
-bar_border="on"
+bar_border="off"
 
 # Progress bar length in spaces
 # Number of chars long to make the progress bars.
@@ -720,8 +728,8 @@ bar_length=15
 # Example:
 # neofetch --bar_colors 3 4
 # neofetch --bar_colors distro 5
-bar_color_elapsed="distro"
-bar_color_total="distro"
+bar_color_elapsed="3"
+bar_color_total="8"
 
 
 # Info display
@@ -738,9 +746,9 @@ bar_color_total="distro"
 # infobar: 'info [---=======]'
 # barinfo: '[---=======] info'
 # off:     'info'
-memory_display="off"
+memory_display="barinfo"
 battery_display="off"
-disk_display="off"
+disk_display="barinfo"
 
 
 # Backend Settings
@@ -820,7 +828,7 @@ image_source="auto"
 #       Slackware, SunOS, LinuxLite, OpenSUSE, Raspbian,
 #       postmarketOS, and Void have a smaller logo variant.
 #       Use '{distro name}_small' to use the small variants.
-ascii_distro="auto"
+ascii_distro="Linux"
 
 # Ascii Colors
 #

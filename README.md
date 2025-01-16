@@ -1,25 +1,68 @@
-<h3 align="center"><img src="https://i.imgur.com/ZQI2EYz.png" alt="logo" height="100px"></h3>
-<p align="center">A command-line system information tool written in bash 3.2+</p>
+<div align="center">
 
-<p align="center">
-<a href="./LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
-<a href="https://github.com/dylanaraps/neofetch/releases"><img src="https://img.shields.io/github/release/dylanaraps/neofetch.svg"></a>
-<a href="https://repology.org/metapackage/neofetch"><img src="https://repology.org/badge/tiny-repos/neofetch.svg" alt="Packaging status"></a>
-</p>
+# Neofetch
 
-<img src="https://i.imgur.com/GFmC5Ad.png" alt="neofetch" align="right" height="240px">
+### 🖼️  A command-line system information tool written in bash 3.2+
 
-Neofetch is a command-line system information tool written in `bash 3.2+`. Neofetch displays information about your operating system, software and hardware in an aesthetic and visually pleasing way.
+<img width="670" alt="neofetch" src="https://github.com/user-attachments/assets/ad0e1c73-2b39-4953-a0f3-73ca54e214fa" />
 
-The overall purpose of Neofetch is to be used in screen-shots of your system. Neofetch shows the information other people want to see. There are other tools available for proper system statistic/diagnostics.
+</div>
 
-The information by default is displayed alongside your operating system's logo. You can further configure Neofetch to instead use an image, a custom ASCII file, your wallpaper or nothing at all.
+# ✏️ Usase
 
-<img src="https://i.imgur.com/lUrkQBN.png" alt="neofetch" align="right" height="240px">
+1. Git clone
 
-You can further configure Neofetch to display exactly what you want it to. Through the use of command-line flags and the configuration file you can change existing information outputs or add your own custom ones.
+    ``` shell
+    git clone https://github.com/the0807/Neofetch
+    cd Neofetch
+    ```
 
-Neofetch supports almost 150 different operating systems. From Linux to Windows, all the way to more obscure operating systems like Minix, AIX and Haiku. If your favourite operating system is unsupported: Open up an issue and support will be added.
+2. `neofetch` 파일 수정
 
+    ``` shell
+    vim neofetch
+    ```
 
-### More: \[[Dependencies](https://github.com/dylanaraps/neofetch/wiki/Dependencies)\] \[[Installation](https://github.com/dylanaraps/neofetch/wiki/Installation)\] \[[Wiki](https://github.com/dylanaraps/neofetch/wiki)\]
+    ``` shell
+    # 서버 도메인 수정하기(57번째 줄)
+    prin "$(color 1)domain.kku.ac.kr"
+
+    # 컨택 이메일 수정하기(74번째 줄)
+    prin "Contact: email@kku.ac.kr"
+
+    # 추가 disk가 있다면 수정하기(456번째 줄)
+    disk_show=('/')
+    # disk의 path 확인하고 수정하기
+    # disk_show=('/' '/dev/sda1')
+    ```
+
+    ``` shell
+    # 저장 후 닫기
+    :wq
+    ```
+
+3. nefetch 설치
+
+    ``` shell
+    sudo make install
+    ```
+
+4. ssh 접속 시 자동으로 실행시키기
+
+    ``` shell
+    sudo sh -c 'echo "neofetch" >> /etc/profile'
+    ```
+
+# ❗️ Troubleshooting
+
+1. 설치한 neofetch를 다시 수정하고 전체 계정에 적용하기
+
+    ``` shell
+    # 각 계정별로 생성된 config 파일 삭제
+    rm_neofetch_config.sh
+
+    # neofetch 파일을 수정한 후 다시 설치하면 전체 적용됨
+    ```
+
+> [!Note]
+> - 각 계정별로 config 파일(~/.config/neofetch/config.conf)이 있으므로 계정별로 커스텀 가능함
