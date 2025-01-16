@@ -59,7 +59,7 @@
 
     ``` shell
     # 각 계정별로 생성된 config 파일 삭제
-    rm_neofetch_config.sh
+    bash rm_neofetch_config.sh
 
     # neofetch 파일을 수정한 후 다시 설치하면 전체 적용됨
     ```
