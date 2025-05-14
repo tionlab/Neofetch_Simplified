@@ -4,7 +4,7 @@
 
 ### 🖼️  A command-line system information tool written in bash 3.2+
 
-<img width="670" alt="neofetch" src="https://github.com/user-attachments/assets/ad0e1c73-2b39-4953-a0f3-73ca54e214fa" />
+<img width="670" alt="neofetch" src="https://i.imgur.com/2aibRXK.png" />
 
 </div>
 
@@ -24,24 +24,24 @@
     ```
 
     ``` shell
-    # 서버 도메인 수정하기(57번째 줄)
-    prin "$(color 1)domain.kku.ac.kr"
+    # 서버 도메인 수정하기(6번째 줄)
+    Domain="domain.kku.ac.kr"
 
-    # 컨택 이메일 수정하기(74번째 줄)
-    prin "Contact: email@kku.ac.kr"
+    # 컨택 이메일 수정하기(7번째 줄)
+    Email="email@kku.ac.kr"
 
-    # 추가 disk가 있다면 수정하기(456번째 줄)
-    disk_show=('/')
+    # 추가 disk가 있다면 수정하기(8번째 줄)
+    disk_available=('/')
     # disk의 path 확인하고 수정하기
-    # disk_show=('/' '/dev/sda1')
+    # disk_available=('/' '/dev/sda1')
     ```
 
     ``` shell
     # 저장 후 닫기
-    :wq
+    ZZ
     ```
 
-3. nefetch 설치
+3. neofetch 설치
 
     ``` shell
     sudo make install
