@@ -8,7 +8,6 @@ install:
 	@mkdir -p $(DESTDIR)$(PREFIX)/bin
 	@mkdir -p $(DESTDIR)$(MANDIR)/man1
 	@cp -p neofetch $(DESTDIR)$(PREFIX)/bin/neofetch
-	@cp -p neofetch.1 $(DESTDIR)$(MANDIR)/man1
 	@chmod 755 $(DESTDIR)$(PREFIX)/bin/neofetch
 
 uninstall:

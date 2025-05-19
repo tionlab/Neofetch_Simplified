@@ -13,7 +13,7 @@
 1. Git clone
 
     ``` shell
-    git clone https://github.com/the0807/Neofetch
+    git clone https://github.com/tionlab/Neofetch_Simplified
     cd Neofetch
     ```
 
